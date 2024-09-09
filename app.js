@@ -13,13 +13,14 @@ function pesquisar() {
   let nome = '';
   let esporte = '';
 
+  // Itera sobre cada item de dados (assumindo que 'dados' é um array)
   for (let dado of dados) {
 
     nome = dado.nome.toLocaleLowerCase()
     esporte = dado.esporte.toLocaleLowerCase()
 
     if (campoPesquisa == '') {
-      section.innerHTML = "<p><strong>Nada foi encontrado!</strong></p><br><p>Você precisa digitar o nome de um atleta ou esporte</p>"
+      section.innerHTML = "<p>Nada foi encontrado, digite o nome de um esporte ou atleta</p>"
       return
     }
     else if (nome.includes(campoPesquisa) || (esporte.includes(campoPesquisa))) {
@@ -36,15 +37,14 @@ function pesquisar() {
         <a href=${dado.link} target="_blank">Clique para saber mais</a>
       </div>
     `;
-    }
+    } 
     else {
-      (!resultados)
-      resultados = 'Nada foi encontrado...'
+      
     }
 
+    
 
-
-  }
+    }
 
   // Insere o HTML gerado na seção de resultados
   section.innerHTML = resultados;
